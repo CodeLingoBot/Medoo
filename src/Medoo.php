@@ -113,7 +113,7 @@ class Medoo
 		}
 		else
 		{
-			if (
+			if(
 				isset($options[ 'port' ]) &&
 				is_int($options[ 'port' ] * 1)
 			)
@@ -266,9 +266,7 @@ class Medoo
 
 					break;
 			}
-		}
-
-		if (!isset($attr))
+		}		if (!isset($attr))
 		{
 			throw new InvalidArgumentException('Incorrect connection options');
 		}
@@ -613,7 +611,7 @@ class Medoo
 			}
 			else
 			{
-				preg_match('/([a-zA-Z0-9_\.]+)(\[(?<operator>\>\=?|\<\=?|\!|\<\>|\>\<|\!?~|REGEXP)\])?/i', $key, $match);
+				preg_match('/([a-zA-Z0-9_\.]+)(\[(?<operator>\>\=?|\<\=?|\!|\<\>|\>\<|\!?~|REGEXP)\])?/i',$key, $match);
 				$column = $this->columnQuote($match[ 1 ]);
 
 				if (isset($match[ 'operator' ]))
@@ -1032,7 +1030,7 @@ class Medoo
 		}
 		else
 		{
-			if (is_null($columns))
+			if(is_null($columns))
 			{
 				if (
 					!is_null($where) ||
@@ -1072,7 +1070,7 @@ class Medoo
 			}
 			else
 			{
-				if (empty($columns) || $this->isRaw($columns))
+				if(empty($columns) || $this->isRaw($columns))
 				{
 					$columns = '*';
 					$where = $join;
